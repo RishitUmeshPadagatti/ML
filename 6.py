@@ -1,4 +1,5 @@
-# Implement the non-parametric locally weighted regression algorithm in order to fit data points. Select appropriate dataset for your experiment and draw graphs
+# Implement the non-parametric locally weighted regression algorithm in order to fit data points. 
+# Select appropriate dataset for your experiment and draw graphs
 
 import numpy as np 
 import matplotlib.pyplot as plt

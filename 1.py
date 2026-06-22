@@ -2,7 +2,6 @@
 # Generate box plots for all numerical features and identify any outliers. Use California Housing dataset.
 
 import pandas as pd
-import numpy as np 
 import matplotlib.pyplot as plt 
 import seaborn as sns 
 from sklearn.datasets import fetch_california_housing 
@@ -16,20 +15,16 @@ print("Dataset Columns: ", df.columns)
 print("\nGenerating histograms...")
 df.hist(bins=20, figsize=(14, 10), color='skyblue', edgecolor='black')
 plt.suptitle('Histograms of Numerical Features', fontsize=16)
-
-plt.tight_layout(rect=[0, 0.03, 1, 0.95])
+plt.tight_layout(rect=[0, 0.03, 1, 0.95]) # left, bottom, right, top
 plt.show()
 
 
 print("\nGenerating box plots...")
 plt.figure(figsize=(14, 10))
-
 for i, col in enumerate(df.columns):
     plt.subplot(3, 3, i+1)
     sns.boxplot(y=df[col], color='skyblue')
     plt.title(col)
-    plt.tight_layout()
-plt.show()
 plt.suptitle("Box plots of Numerical Features", fontsize=16)
 plt.tight_layout(rect=[0, 0, 1, 0.96])
 plt.show()

@@ -1,7 +1,5 @@
 # Develop a program to implement k-means clustering using Wisconsin Breast Cancer data set and visualize the clustering result.
 
-import numpy as np 
-import pandas as pd
 import matplotlib.pyplot as plt
 
 from sklearn.datasets import load_breast_cancer
@@ -25,7 +23,6 @@ X_pca = pca.fit_transform(X_scaled)
 kmeans = KMeans(n_clusters=2, random_state=42)
 y_kmeans = kmeans.fit_predict(X_pca)
 
-# Visualize
 plt.figure(figsize=(10, 6))
 plt.scatter(X_pca[:, 0], X_pca[:, 1])
 plt.scatter(kmeans.cluster_centers_[:,0], 
@@ -38,7 +35,6 @@ plt.ylabel("Principal Component 2")
 plt.legend()
 plt.grid(True)
 plt.show()
-
 
 
 # Evaluate Clustering by comparing with true labels

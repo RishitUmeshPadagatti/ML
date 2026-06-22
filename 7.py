@@ -22,8 +22,6 @@ lin.fit(x_h, y_h)
 
 print("Linear R2 Score: ", lin.score(x_h, y_h))
 
-plt.figure(figsize=(12, 5))
-plt.subplot(1, 2, 1)
 plt.scatter(x_h[:300], y_h[:300], alpha=0.3)
 plt.plot(
     x_h[:300],
@@ -36,6 +34,7 @@ plt.xlabel("Feature")
 plt.ylabel("Target")
 plt.title("Linear Regression Fit")
 plt.legend()
+plt.show()
 
 
 
@@ -59,7 +58,6 @@ y_poly_pred = poly_model.predict(X_test)
 
 print("Polynomial R2 Score: ", poly_model.score(X_test, y_test))
 
-plt.subplot(1, 2, 2)
 plt.scatter(X_test, y_test, alpha=0.5, label="Actual")
 sorted_data = sorted(zip(X_test.flatten(), y_poly_pred))
 X_sorted = np.array([x for x, y in sorted_data])
@@ -69,6 +67,5 @@ plt.title("Polynomial Regression")
 plt.xlabel("Horsepower")
 plt.ylabel("MPG")
 plt.legend()
-
 plt.tight_layout()
 plt.show()

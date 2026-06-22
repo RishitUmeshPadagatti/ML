@@ -2,22 +2,19 @@
 # Visualize the correlation matrix using a heatmap to know which variables have strong positive/negative correlations. 
 # Create a pair plot to visualize pairwise relationships between features. Use California Housing dataset.
 
-
 import pandas as pd
-import seaborn as sns
 import matplotlib.pyplot as plt
+import seaborn as sns
 from sklearn.datasets import fetch_california_housing
 
-california_data = fetch_california_housing(as_frame=True)
-data = california_data.frame
-
-corelation_matrix = data.corr()
+data = fetch_california_housing(as_frame=True)
+df = data.frame
 
 plt.figure(figsize=(10, 8))
-sns.heatmap(corelation_matrix, annot=True, cmap='coolwarm', fmt='.2f', linewidths=0.5)
+sns.heatmap(df.corr(), annot=True, cmap='coolwarm', fmt='.2f')
 plt.title('Correlation Matrix of California Housing Features')
 plt.show()
 
-sns.pairplot(data, diag_kind='kde', plot_kws={'alpha': 0.5})
+sns.pairplot(df, diag_kind='kde') # kde = smooth curves
 plt.suptitle('Pair Plot of California Housing Features', y=1.02)
 plt.show()
